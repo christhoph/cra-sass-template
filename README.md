@@ -4,7 +4,7 @@ This project is a personal template for use in any project.
 
 Has a default configuration with:
 
-- [styled-components](https://styled-components.com/)
+- [SASS](https://sass-lang.com/)
 - [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

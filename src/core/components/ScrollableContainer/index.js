@@ -1,21 +1,20 @@
 import React from "react";
+import cn from "classnames";
 import PropTypes from "prop-types";
 
-import { ScrollableContainerWrapper } from "./styles";
-
-const ScrollableContainer = ({ refElement, css, children }) => (
-  <ScrollableContainerWrapper ref={refElement} css={css}>
+const ScrollableContainer = ({ refElement, className, children }) => (
+  <div className={cn("scrollable-container", { [className]: className })} ref={refElement}>
     {children}
-  </ScrollableContainerWrapper>
+  </div>
 );
 ScrollableContainer.propTypes = {
   refElement: PropTypes.object,
-  css: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired
 };
 ScrollableContainer.defaultProps = {
   refElement: null,
-  css: ""
+  className: ""
 };
 
 export default ScrollableContainer;

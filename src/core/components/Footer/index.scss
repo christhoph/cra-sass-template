@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+
+.footer-container {
+  height: 50px;
+  width: 100%;
+  background: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  position: relative;
+
+  .footer-text {
+    color: $white;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    height: max-content;
+    flex-direction: column-reverse;
+    padding: 0.5rem 0;
+
+    .footer-text {
+      padding: 0.5rem;
+    }
+  }
+}

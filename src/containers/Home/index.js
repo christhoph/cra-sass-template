@@ -1,12 +1,12 @@
 import React from "react";
 
-import { HomeContainer } from "./styles";
 import Greetings from "../../components/Greetings";
+import "./index.scss";
 
 const Home = () => (
-  <HomeContainer>
+  <div className="home-container">
     <Greetings />
-  </HomeContainer>
+  </div>
 );
 
 export default Home;

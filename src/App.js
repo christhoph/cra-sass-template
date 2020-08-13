@@ -1,25 +1,15 @@
 import React from "react";
-import styled from "styled-components";
 
-import { GlobalStyles } from "./core";
 import ContextProviders from "./core/context";
 import Routes from "./Routes";
-
-const AppView = styled.div`
-  min-height: 100vh;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-`;
+import "./App.scss";
 
 const App = () => (
-  <AppView>
+  <div className="app-container">
     <ContextProviders>
       <Routes />
     </ContextProviders>
-    <GlobalStyles />
-  </AppView>
+  </div>
 );
 
 export default App;

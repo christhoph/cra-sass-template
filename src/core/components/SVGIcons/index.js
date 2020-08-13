@@ -1,8 +1,9 @@
 import React from "react";
+import cn from "classnames";
 import PropTypes from "prop-types";
 
 import { SVGS } from "./icons";
-import { SVGIconsContainer } from "./styles";
+import "./index.scss";
 
 const SVGIcons = ({
   wrapperClass,
@@ -15,10 +16,9 @@ const SVGIcons = ({
   const { x, y, height, width, paths } = SVG;
 
   return (
-    <SVGIconsContainer
-      className={wrapperClass}
+    <div
+      className={cn("icon-container", { [wrapperClass]: !!wrapperClass })}
       onClick={iconAction}
-      iconColor={iconColor}
       tabIndex={0}
       role="button"
     >
@@ -26,12 +26,13 @@ const SVGIcons = ({
         className={iconClass}
         height={height}
         width={width}
+        style={{ fill: iconColor }}
         viewBox={`${x || 0} ${y || 0} ${width} ${height}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         {paths && !paths.length ? paths.map(path => path) : paths}
       </svg>
-    </SVGIconsContainer>
+    </div>
   );
 };
 SVGIcons.propTypes = {

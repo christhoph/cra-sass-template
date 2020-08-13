@@ -1,7 +1,9 @@
 import React from "react";
 
-import { GreetingsText } from "./styles";
+import { convertHexToRgba, colors } from "../../core";
 
-const Greetings = () => <GreetingsText>Hello World!</GreetingsText>;
+const { primary } = colors;
+
+const Greetings = () => <h2 style={{ color: convertHexToRgba(primary, 0.8) }}>Hello World!</h2>;
 
 export default Greetings;

@@ -5,27 +5,19 @@ import PropTypes from "prop-types";
 import { useMenuContext } from "../../context";
 import { ROOT_ROUTE } from "../../constants";
 
-import {
-  HeaderContainer,
-  HeaderMenuBox,
-  HeaderMenuContainer,
-  HeaderMenuItem
-} from "./styles";
-
 import SVGIcons from "../SVGIcons";
+import "./index.scss";
 
-const MenuItem = ({ css, action, title }) => (
-  <HeaderMenuItem css={css} onClick={action}>
+const MenuItem = ({ action, title }) => (
+  <div className="menu-box_item" onClick={action}>
     {title}
-  </HeaderMenuItem>
+  </div>
 );
 MenuItem.propTypes = {
-  css: PropTypes.string,
   action: PropTypes.func.isRequired,
   title: PropTypes.string
 };
 MenuItem.defaultProps = {
-  css: "",
   title: "Home"
 };
 
@@ -42,20 +34,20 @@ const Header = () => {
   );
 
   return (
-    <HeaderContainer>
+    <div className="header-container">
       <h2>CRA Template</h2>
-      <HeaderMenuBox>
-        <HeaderMenuContainer showMenu={showMenu}>
+      <div className="header-menu_box">
+        <div className="menu-box_container" style={{ left: showMenu ? 0 : "-100%"}}>
           <MenuItem action={handleGoToRoute(ROOT_ROUTE)} />
-        </HeaderMenuContainer>
+        </div>
         <SVGIcons
           wrapperClass="menu-icon-container"
           iconClass="menu-icon"
           iconName="bars_icon"
           iconAction={toggleShowMenu}
         />
-      </HeaderMenuBox>
-    </HeaderContainer>
+      </div>
+    </div>
   );
 };
 

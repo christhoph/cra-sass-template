@@ -1,14 +1,14 @@
 import React from "react";
 
-import { FooterContainer, FooterText } from "./styles";
+import "./index.scss";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <FooterContainer>
-      <FooterText>CRA Template &copy; {currentYear}</FooterText>
-    </FooterContainer>
+    <div className="footer-container">
+      <p className="footer-text">CRA Template &copy; {currentYear}</p>
+    </div>
   );
 };
 
